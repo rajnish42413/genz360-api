@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/font.css" />
+  <style>
+    .box {
+      padding: .75rem 1.25rem;
+      margin-bottom: 0;
+      background-color: rgba(0, 0, 0, .03);
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
+      margin-top: 2%;
+    }
+
+    .back_btn:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <div style="display: flex;flex-direction:row;align-items:center;">
+      <img src="../static/back_btn.png" style="width:40px;" class="back_btn" onclick="history.go(-1);return false;" />
+      <div style="font-size:2em;font-weight:bolder;margin-left:20px;font-family:'SF'">Influencers Involved in:
+        {{c.name}} (Campaign id: {{c.campaign_id}})</div>
+    </div>
+    <!-- <h3>Influencers Involved in: {{c.name}} (Campaign id: {{c.campaign_id}})</h3> -->
+    {% for i in ii %}
+    <div class="box">
+      <div class="row">
+        <h4>
+          {{i.influencer.name}}
+        </h4>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            Influencer id: {{i.influencer.influencer_id}}
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div style="margin-left:50%;"><a href="/admin-get-post-data/{{i.inf_inv_id}}">
+              <button type="submit" class="btn btn-primary">Posts</button>
+
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Status for campaign : {% if i.accepted%} Accepted {% else %} Pending {% endif %} </p>
+        </div>
+        <div class="col-md-6">
+          <div style="margin-left: 50%;margin-top:2%;"><a href="/admin-inf-det/{{i.influencer.influencer_id}}">
+              <button type="submit" class="btn btn-primary">Details</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    {% endfor %}
+  </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  swal('{{message}}');
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+</script>
+
+</html>

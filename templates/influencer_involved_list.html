@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/font.css" />
+  <style>
+    .box {
+      padding: .75rem 1.25rem;
+      margin-bottom: 0;
+      background-color: rgba(0, 0, 0, .03);
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
+      margin-top: 2%;
+    }
+
+    .back_btn:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <div style="display: flex;flex-direction:row;align-items:center;">
+      <img src="../static/back_btn.png" style="width:40px;" class="back_btn" onclick="history.go(-1);return false;" />
+      <div style="font-size:2em;font-weight:bolder;margin-left:20px;font-family:'SF'">Influencers Involved in:
+        {{c.name}} (Campaign id: {{c.campaign_id}})</div>
+    </div>
+    <br>
+        <div  style="margin-top:10px;">
+    <a href="/export-inf-inv/{{c.campaign_id}}"><button class="btn btn-primary">Download Report</button></a>
+    </div>
+    <br>
+        <div class="row">
+    <h4>Number of participations={{acc}}</h4>
+  </div>
+  <div class="row">
+    <h4>Task done={{task_counter}}</h4>
+  </div>
+
+
+    <!-- <h3>Influencers Involved in: {{c.name}} (Campaign id: {{c.campaign_id}})</h3> -->
+    <br>
+    <a href="/admin-inf-post-alldone/{{c.campaign_id}}"><button class="btn btn-primary">Select All</button></a>
+    <a href="/admin-inf-post-alldone-false/{{c.campaign_id}}"><button class="btn btn-primary">Deselect All</button></a>
+
+    <a href="/admin-payout/{{c.campaign_id}}"><button class="btn btn-primary" style="float: right;">Pay out</button></a>
+    <br>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Influencer Id</th>
+          <th scope="col">Influencer name</th>
+          <th scope="col">Mobile number</th>
+          <th scope="col">Status</th>
+          <th scope="col">Post_url</th>
+          <th scope="col">File_url</th>
+          <th scope="col">Text</th>
+          {% if c.subtype=="4" or c.subtype=="6" %}
+          <th scope="col">ONLY for UGC Accept/Reject</th>
+          {% endif %}
+          <th scope="col">Status</th>
+          <th scope="col">Reach(Likes)</th>
+          <th scope="col">Payment status</th>
+          <th scope="col">Checkbox</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          {% for i in ii %}
+        <tr>
+          <th scope="row">{{i.influencer.influencer_id}}</th>
+          <td>{{i.influencer.name}}</td>
+          <td>{{i.influencer.mobile_no}}</td>
+          <td> {% if i.accepted %} Accepted {% else %} Pending {% endif %}</td>
+          <td>{% if i.posts|length > 0 %}{{i.posts[0].post_unique_id}} {% endif %} </td>
+          <td>{% if i.posts|length > 0 %}<a href="http://www.genz360.com:81/get-image/{{i.posts[0].file_name}}" target="_blank">View</a> {% endif %} </td>
+          
+          <td>
+              {% if i.posts|length > 0 %}{{i.posts[0].post_data}} {% endif %}
+        </td>
+          
+          {% if i.posts|length > 0 %}
+          {% if c.subtype=="4" or c.subtype=="6" %}
+          <td><a href="/admin-verify-ugc/{{i.posts[0].pd_id}}/{{c.campaign_id}}"><button class="btn btn-success">Accept</button></a>
+          <a href="/admin-reject-ugc/{{i.posts[0].pd_id}}/{{c.campaign_id}}"><button class="btn btn-danger" style="margin-top:8px;">Reject</button></a></td>
+          {% endif %}
+          {% endif %}
+          
+            
+          <td>
+              {% if i.posts|length > 0 %}{{i.posts[0].	verified}} {% endif %}
+        </td>
+        
+          <td>{% if i.posts|length > 0 %}{{i.posts[0].like_count}} {% endif %}</td>
+          <td>{{ i.paid_status }}</td>
+       
+          {% if i.posts|length > 0 and i.posts[0].done %}
+          <td><a href="/admin-inf-post-notdone/{{i.posts[0].pd_id}}/{{c.campaign_id}}"><button class="btn btn-primary">Done</button></a></td>
+          {% elif i.posts|length > 0 %}
+          <td><a href="/admin-inf-post-done/{{i.posts[0].pd_id}}/{{c.campaign_id}}"><button class="btn btn-primary">Not Done</button></a></td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  swal('{{message}}');
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+</script>
+
+</html>

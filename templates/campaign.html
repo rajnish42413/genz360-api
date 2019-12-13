@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/font.css" />
+
+  <style>
+    .back_btn:hover{
+      cursor: pointer;
+      transform:scale(0.9);
+      transition:0.3s;
+    }
+    </style>
+</head>
+
+<body>
+    <form action="/admin-filter_content/{{sts}}" method="POST">
+<div class="container">
+<br>
+<h3>{{value}}</h3>
+<div  style="margin-top:10px;">
+    <a href="/export-campaigns/{{sts}}"><button class="btn btn-primary">Download Report</button></a>
+    </div>
+    <br>
+  <div class="row" style="margin-top:2%;">
+
+    <div class="col-md-3">
+        <!-- <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Status
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#" name="0">Closed</a>
+              <a class="dropdown-item" href="#" name="1">Active</a>
+              <a class="dropdown-item" href="#" name="2">Upcoming</a>
+            </div>
+          </div> -->
+          <!-- <select class="form-control form-control-lg" name="status">
+              <option value=0>Pending</option>
+              <option value=1>Active</option>
+              <option value=2>Completed</option>
+            </select> -->
+    </div>
+    <div class="col-md-3">
+
+          <select class="form-control form-control-lg" name="type">
+              <option value=1>Brand Awareness(pan india)</option>
+              <option value=2>Event Promotion(pan india)</option>
+              <option value=3>Viral Marketing</option>
+              <option value=4>User generated content text/images</option>
+              <option value=5>App promotion and installs</option>
+              <option value=6>User generated content video</option>
+              <option value=7>Brand awareness(city)</option>
+              <option value=8>Event Promotion(city)</option>
+
+            </select>
+      </div>
+      <div class="col-md-3">
+
+            <select class="form-control form-control-lg" name="platform">
+                <option value=0>Facebook</option>
+                <option value=1>Instagram</option>
+                <option value=3>Twitter</option>
+                <option value=2>You tube</option>
+              </select>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" type="submit">Submit</button>
+
+          </div>
+
+  </div>
+
+</div>
+</form>
+
+    <!-- <form style="margin-top:30px;" action="/admin-filter_content" method="POST"> -->
+
+
+
+    <!-- </form> -->
+
+    {% for d in dd %}
+
+    <div class="accordion" id="accordionExample" style="margin:2%;">
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <div class="row">
+                <h3>{{d['c'].name}}</h3>
+                <p style="margin-left:60%;">Status:{{status[d['c'].status]}}</p>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+              <p>Campaign id: {{d['c'].campaign_id}}</p>
+              </div>
+              <div class="col-md-6">
+                  <span style="margin-left:50%;"><a href="/admin-influencers-involved/{{d['c'].campaign_id}}"><button type="button" class="btn btn-info">Influencers Involved</button></a></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                  <p>Brand Name: {{d['brand_name']}}</p>
+
+              </div>
+              <div class="col-md-6">
+                  <span style="margin-left:50%;"><a href="/admin-campaign-det/{{d['c'].campaign_id}}"><button type="button" class="btn btn-info">Details</button></a></span>
+
+              </div>
+              <a href="/admin-get-inf-involved/{{d['c'].campaign_id}}"></a>
+            </div>
+            <div class="row">
+              <img src="http://www.genz360.com:81/get-image/{{d['c'].image}}" style="width:20%;height:20%;">
+            </div>
+
+            <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo{{loop.index}}" aria-expanded="false" aria-controls="collapseTwo">                 Expand
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseTwo{{loop.index}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">            <div class="card-body">
+            <form action="/admin-update-campaign-status/{{d['c'].campaign_id}}" method="POST" >
+            <div class="row">
+    <div class="col-md-3">
+        <select class="form-control form-control-lg" name="status">
+            <option disabled>Status</option>
+            <option value=0>Pending</option>
+            <option value=1>Active</option>
+            <option value=2>Completed</option>
+          </select>
+    </div>
+    <div class="col-md-3">
+      <input type="number" class="form-control" id="Email" aria-describedby="ProximaNova-Bold"
+          placeholder="pay out to type1 influencer" name="type1">
+        </div>
+        <div class="col-md-3">
+          <input type="number" class="form-control" id="Email" aria-describedby="ProximaNova-Bold"
+          placeholder="pay out to type2 influencer" name="type2">
+        </div>
+
+        <div class="col-md-3">
+                  <input type="text" class="form-control" id="Email" aria-describedby="ProximaNova-Bold"
+                  placeholder="Data" name="data">
+                </div>
+                <br>
+        <div class="col-md-3">
+                  <input type="text" class="form-control" id="Email" aria-describedby="ProximaNova-Bold"
+                  placeholder="Payment Date" name="pay_date">
+                </div>
+        
+
+
+        <div class="col-md-3">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+            </div>
+          </form>
+          </div>
+        </div>
+        </div>
+        </div>
+    {% endfor %}
+    <!-- <ul>
+    {% for i in c %}
+
+      <li>
+        {{i.name}} ,{{i.status}}
+        <form style="margin-top:30px;" action="/admin-register" method="POST">
+
+          <div class="form-group">
+
+
+
+            <select class="form-control form-control-lg" name="status">
+              <option disabled>status</option>
+              <option value="0">Closed</option>
+              <option value="1">Active</option>
+              <option value="2">Upcoming</option>
+            </select>
+            <select class="form-control form-control-lg" name="type1">
+              <option disabled>Pay out to type 1 influencer</option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+
+            </select>
+            <select class="form-control form-control-lg" name="type2">
+              <option disabled>Pay out to type 1 influencer</option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" id="create_account">SUBMIT</button><br>
+
+        </form>
+
+      </center>
+
+      </li>
+      {% endfor %}
+    </ul> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
+</html>

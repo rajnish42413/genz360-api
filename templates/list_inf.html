@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/font.css" />
+
+    <style>
+     .content_wrap{
+       display: flex;
+       flex-direction:row;
+       align-items: center;
+       justify-content: space-between;
+       width:95%;
+       padding:15px 51px 15px 15px ;
+       box-shadow: 3px 4px 13px 1px rgba(0,0,0,0.2);
+     }
+
+      .button{
+       background:none;
+       color:'blue'
+       border:1.5px solid blue;
+       border-radius:8px;
+       padding:5px 10px 5px 10px;
+     }
+      .back_btn:hover{
+      cursor: pointer;
+      transform:scale(0.9);
+      transition:0.3s;
+    }
+    </style>
+
+</head>
+
+
+<body><br>
+
+  <div class="container">
+    <h3>Influencers</h3>
+    <div  style="margin-top:10px;">
+    <a href="/export-all-influencers"><button class="btn btn-primary">Download Report</button></a>
+    </div>
+    <br>
+      {% for i in ii %}
+
+      <!-- <div class="row">
+        <h4>
+          {{i.brand_name}}
+        </h4>
+      </div> -->
+      <!-- <div class="row">
+        <div class="col-md-6">
+            <p>
+                Brand id: {{i.brand_id}}
+              </p>
+        </div>
+
+        </div>
+
+        <div class="row">
+        <div class="col-md-6">
+            <div style="margin-left: 50%;margin-top:2%;">
+              <a href="/admin-inf-det/{{i.influencer_id}}">
+              <button type="submit" style="float:right" class="btn btn-primary">Details</button>
+            </a>
+          </div>
+        </div>
+        </div> -->
+
+        <div class="content_wrap" >
+          <div>
+            <div style="font-size:1.2em;font-weight:bold;">{{i.name}} </div><br>
+            <div>
+                  Influencer id: {{i.influencer_id}}
+            </div>
+          </div>
+          <a href="/admin-inf-det/{{i.influencer_id}}"><button type="submit" class="btn btn-primary">Details</button></a>
+        </div>
+
+
+
+    {% endfor %}
+  </div>
+
+</body>
+
+
+<!-- <body>
+  <div class="container">
+    <br>
+    {% for i in ii %}
+    <div class="box">
+      <div class="row">
+        <h4>
+          {{i.name}}
+        </h4>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <p>
+                Influencer id: {{i.influencer_id}}
+              </p>
+        </div>
+
+        </div>
+      <div class="row">
+      <div class="col-md-6">
+          <div style="margin-left: 50%;margin-top:2%;"><a href="/admin-inf-det/{{i.influencer_id}}">
+            <button type="submit" class="btn btn-primary">Details</button>
+          </a>
+        </div>
+      </div>
+      </div>
+
+
+    </div>
+    {% endfor %}
+  </div>
+
+</body> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  swal('{{message}}');
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+</script>
+
+</html>

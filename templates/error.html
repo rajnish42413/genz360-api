@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Parliament - Home </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+	<link rel="stylesheet" href="../static/css/home.css">
+	<link rel="stylesheet" href="../static/css/font.css">
+
+<style>
+
+body{
+	background:url('../static/error.png') no-repeat;
+	background-position: 15% 50%;
+	overflow: hidden;
+	padding-right:10%;
+	padding-left:8%;
+}
+
+button:hover{
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+.text{
+	margin-left:10%;
+	margin-top:14%;
+	margin-right:10%;
+}
+
+.msg{
+	font-size:4em;
+	font-family: 'Etna'
+}
+
+
+.text a{
+	font-size:2em;
+	text-decoration: none;
+	font-family: 'SF';
+	color:#2b44ff;
+	font-family: 'SF'
+}
+
+.text a:hover{
+	font-family: 'Gilroy-ExtraBold';
+	transition: 0.3s;
+}
+
+.br{
+	margin-top:40px;
+}
+
+@media only screen and (max-width:600px){
+	body{
+		background-position: 18% 80%;
+	}
+
+	.text{
+		margin-top:40px;
+		margin-left:-10px;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 400px){
+	body{
+
+	}
+
+	.msg{
+		font-size:2.2em;
+	}
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="text center">
+	<div class="msg" style="font-family:'SF';">This Page Seems to be Broken</div>
+	<div class="br"></div>
+	<button style="border:1px solid blue;background: none;font-size: 1.3em;font-family:'SF',padding:10px;" onclick="history.go(-1); return false;" >Go Back </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
+</html>

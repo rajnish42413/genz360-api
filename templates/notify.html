@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title></title>
+<style>
+
+	body{
+		text-align:center;
+		margin-top:15vh;
+	}
+
+	.heading{
+		font-size:1.5rem;
+		font-weight: bold;
+	}
+
+	textarea{
+		width:80%;
+		height:30vh;
+		border:1px solid #a9a9a9;
+		margin-top:8px;
+		font-size:1.2em;
+
+	}
+
+	input{
+		width:80%;
+		height:45px;
+		border:1px solid #a9a9a9;
+		margin-top:10px;
+		font-size:1.2em;
+	}
+
+	button{
+		width:80%;
+		height: 45px;
+		border:1px solid #a9a9a9;
+		background-color: #dadada;
+		margin-top:8px;
+		color:#000;
+		font-size: 1.3em;
+	}
+
+</style>
+</head>
+<body>
+
+<div class="heading">Send Notifications</div>
+<form method="POST" action="/send-push-notification-inf">
+	<textarea name="msg"></textarea><br>
+	<input type="password" name="passwd">
+	<button>Submit</button>
+</form>
+</body>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
+</html>

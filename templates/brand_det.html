@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik|Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/font.css" />
+</head>
+<style>
+
+    p{
+        font-size:20px;
+         font-family: 'Ubuntu', sans-serif;
+font-family: 'Rubik', sans-serif;
+
+    }
+    td{
+        text-align: center
+    }
+
+      .back_btn:hover{
+      cursor: pointer;
+      transform:scale(0.9);
+      transition:0.3s;
+    }
+    </style>
+<body>
+ <div style="margin-left:5%;margin-right:5%;">
+   <div style="display: flex;flex-direction:row;align-items:center;">
+   <img src="../static/back_btn.png" style="width:40px;" class="back_btn" onclick="history.go(-1);return false;" />
+   <div style="font-size:2em;font-weight:bolder;margin-left:20px;font-family:'SF'">Brand details</div>
+   </div>
+    <!-- <h1 style="color:blue;font-size:60px">Brand details</h1> -->
+   <p>Brand id:{{i.brand_id}}</p>
+   <p>Brand Name:{{i.brand_name}}</p>
+     <p>Full name:{{i.full_name}}</p>
+   <p>Email:{{i.email}}</p>
+   <p>Conatct No:{{i.contact_no}}</p>
+   <p>Verified:{{i.verified}}</p>
+   <p>Registration Date:{{i.registration_date}}</p>
+   <p>Company Type:{{i.company_type}}</p>
+   <p>Company Turnover:{{i.company_turnover}}</p>
+     <p>Headquarter:{{i.headquarter}}</p>
+   <p>Website:{{i.website_url}}</p>
+   <p>Brand wallet:{{i.b_wallet}}</p>
+
+<br>
+      <h2 style="color:blue">Spoc Details</h2>
+     <p>Spoc id:{{spoc.spoc_id}}</p>
+     <p>Name:{{spoc.name}}</p>
+     <p>Email:{{spoc.email}}</p>
+     <p>Contact no:{{spoc.contact_no}}</p>
+     <p>Designation:{{spoc.designation}}</p>
+     <br>
+     <h2 style="color:blue">Payments</h2>
+
+   <table border="1" style="width:100%;margin-bottom:100px;font-size:1.2em;font-family:'SF'">
+        <tr>
+            <th>Date/Time</th>
+            <th>Payment id</th>
+            <th>Mode</th>
+            <th>Amount</th>
+            <th>Purpose</th>
+            <th>Status</th>
+        </tr>
+        {% for d in p %}
+        <tr>
+            <td>{{d.payment_id}}</td>
+            <td> {{d.date_time}}</td>
+            {% if d.mode==0 %}
+            <td>Paypal</td>
+            {% elif d.mode==1 %}
+            <td>Paytm</td>
+            {% endif %}
+            <td> {{d.amount}}</td>
+            <td> {{d.purpose}}</td>
+            <td> {{d.status}}</td>
+        </tr>
+      {% endfor %}
+   </table>
+    </div>
+</body>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Admin Dashboard </title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="../static/css/font.css" />
+
+<style>
+
+body,html
+{
+  font-family:SF-Regular;
+  overflow-y: hidden;
+}
+a
+{
+  color:grey;
+  /* top:20px; */
+}
+a:hover
+{
+  color:grey;
+  text-decoration: none;
+}
+
+#sidebar-icon
+{
+font-size: 30px;
+}
+.Profile
+{
+  padding-right: 60px;
+  font-size: 35px;
+  font-family:PN BOLD;
+
+}
+#logout
+{
+  padding-right: 60px;
+  font-size: 24px;
+  font-family:PN BOLD;
+  margin-bottom:20px;
+}
+.logo
+{
+  width:50%;
+  height:45%;
+}
+
+
+/* side bar css start */
+.parent
+{
+  display: flex;
+  font-family:'Times New Roman', Times, serif;
+
+}
+
+/* ul li, ul li span:last-child {
+    transition:all 500ms;
+} */
+aside {
+    width:300px;
+    background : white;
+    height:100%;
+    position: relative;;
+    top:0%;
+    left:0;
+    bottom:0;
+}
+/* ul {
+    margin:0;
+    padding:0;
+    counter-reset:li;
+
+}
+ul li {
+    list-style:none; */
+    /* border-bottom:1px solid #222; */
+/*
+    border-right-width: 100%;
+    height:52px;
+    color:#666;
+    position:relative;
+    overflow:hidden;
+}
+ul li:hover {
+    color:#fff;
+    cursor:pointer;
+}
+ul li span {
+    display:block;
+    padding-left:15px;
+    position:absolute;
+    top:0;
+   left: 0;
+    right:0;
+    bottom:0;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+li span
+{
+  padding-bottom: 2px;
+}
+ul li span:first-child {
+    z-index:2;
+}
+ul li span:last-child {
+    padding:0;
+    display:block;
+    background:#E15249;
+    z-index:1;
+    position:absolute;
+    top:0;
+    left:-300px;
+    bottom:0;
+    width:300px;
+    height:52px;
+}
+ul li:hover > span:last-child {
+    left:0;
+} */
+
+.side_list li{
+  font-size: 1.1em;
+  list-style-type: none;
+  padding-top:10px;
+  border-bottom: 1px solid #a9a9a9;
+  font-family:'SF';
+  width: 100%;
+}
+
+.side_list li:hover{
+  cursor: pointer;
+  transition:0.2s;
+  background-color:rgba(0,0,0,0.1);
+}
+
+/* side bar css end */
+  @media only screen and (max-width: 600px) {
+
+
+
+  .header
+  {
+    margin-left:10%;
+  }
+
+  aside
+  {
+    min-width:100%;
+  }
+
+
+}
+
+  .back_btn:hover{
+      cursor: pointer;
+      transform:scale(0.9);
+      transition:0.3s;
+    }
+    </style>
+ </head>
+ <header>
+
+  <nav style="height:70px;" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="static/logo.png" style="width:120px;height:100px;" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+
+      </ul>
+      <span class="navbar-text">
+
+
+
+      <span class="navbar-text">
+        <a href="/admin-logout" id="logout" ><ion-icon name="log-out"></ion-icon>Log Out
+        </a>
+      </span>
+    </div>
+  </nav>
+
+<div class="parent">
+  <!-- Channel partner side navbar -->
+  <div class="sidebar">
+      <aside>
+          <ul class="side_list">
+              <!-- <a href="/admin-campaign" target="myframe" style="text-decoration:none;"><li>Campaigns</li></a> -->
+              <a href="/admin-pending-campaign" target="myframe"><li>Pending Campaigns</li></a>
+              <a href="/admin-active-campaign"  target="myframe"><li>Active Campaigns</li></a>
+              <a href="/admin-completed-campaign" target="myframe"><li>Completed Campaigns</li></a>
+              <a href="/admin-brands" target="myframe"><li>Brands</li></a>
+              <a href="/admin-influencers" target="myframe"><li>Influencers</li></a>
+              <a href="/send-notification-inf" target="myframe"><li>Notification</li></a>
+          </ul>
+        </aside>
+  </div>
+  <!--Channel partner side bar ended-->
+
+
+  <!--Manager sidebar ended-->
+<div class="right_content" style="flex:1;">
+<iframe src="/admin-pending-campaign"  name="myframe" id="myframe"  style="overflow-y:auto;width:100%;height:90vh;"></iframe>
+</header>
+<body>
+    <div class="container-fluid">
+
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script type="text/javascript">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
+</html>

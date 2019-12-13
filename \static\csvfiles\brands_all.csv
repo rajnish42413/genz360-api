@@ -1,0 +1,73 @@
+brand_id,full_name,brand_name,email,verified,company_type,company_turnover,registration_date,contact_no,company_size,headquarter,website_url,b_wallet,spoc_name,spoc_email,spoc_contact_no,spoc_designation
+1,ManishJalan,The Engineer Bro ,manishjalan.jalan@gmail.com,True,entertainment,50000001-1,,7504680419,7504680419,Delhi,K,0,Manish  Jalan,Manishjalan.jalan@gmail.com,7504680419,Owner
+2,ShashiBhushan,ZYX,shashi.bhushan@studentingera.com,True,it,10001-2000,,8130709490,8130709490,"B-88, Nawada Uttam Nagar",developershashi.com,0,Shashi Bhushan,shashi.bhushan@studentingera.com,8130709490,Softw
+3,ShwetaSoni,Amber jaipur ,Shweta.soni@gmail.com,True,fashion,10001-2000,,9811749770,9811749770,Jaipur Rajasthan,www.amberjaipur.com,0,Shweta Soni,shweta.soni@gmail.com,9811749770,Owner
+6,pankajjoshi,digital art,pankaj12345joshi@gmail.com,False,,,,9315464394,9315464394,,,0,,,,
+11,amansahu,nike,amansahoo0887469@gmail.com,False,,,,9179065060,9179065060,,,0,,,,
+12,ShreyashRastogi,mi,mrshre1535682@gmail.com,True,,,,9169817653,9169817653,,,0,Shreyash Rastogi,mrshre1535682@gmail.com,9169817653,m
+13,RuchikaSarna,Kaizen ,sarnaruchika1980@gmail.com,True,education,20001-5000,,9811749770,9811749770,Noida,www.kajzenshipping.orb,0,Ruchika Sarna,Sarnaruchika1980@gmail.com,9811749770,Owner
+18,Anand Sagar Chauhan ,Nike,ANANDSAGARCHAUHAN@GMAIL.COM,False,,,,7310941596,7310941596,,,0,,,,
+100,PrateekKapgate,P. K. ,prateek.kapgate@gmail.com,False,,,,9373658935,9373658935,,,0,,,,
+101,SaurabhKumar,Saurabh,sk.64657909@gmail.com,False,,,,9517544948,9517544948,,,0,,,,
+104,RajnishSingh,Ddd,rajnish42413@gmail.com,True,entertainment,10001-2000,,8808100876,8808100876,Bsnsm,Http://www.Gend.Com,0,Raj Singh,Rajnish42413@gmail.com,8808100876,Hd
+107,HarshitSingh,MyBrand,abcdef808129@gmail.com,True,education,20001-5000,,9643174319,9643174319,Delhi,Www.delhiindiahs.com,0,Harshit Singh,abcdef808129@gmail.com,9090909090,Manag
+106,RajnishSingh,Dfg,rajnishsingh42413@gmail.com,True,entertainment,10001-2000,,8808100876,8808100876,Gb,Hm.com,0,Rajnish Singh,rajnish42413@gmail.com,8808100876,HR
+117,rajatyadav,yup,rajatyadav05.ry@gmail.com,True,,,,8382804150,8382804150,,,0,rajat yadav,rajatyadav05.r@mail.com,8888888888,o
+109,rajatyadav,brans,aa@gmai.com,False,,,,8313131313,8313131313,,,0,,,,
+112,rajatyadav,88,rajat@gmail.com,False,,,,8888888888,8888888888,,,0,,,,
+113,hihihihi,yo,hihi@gmail.com,True,,,,8382804150,8382804150,,,0,RA RA,rajatyadav05.ry@gmail.com,1111111111,ce
+116,PrincSharma,Abc,Prince@gmail.com,True,hospitality,100001-500,,8130709490,8130709490,H,Www,0,Abc Abc,Abc@gmail.com,8130709490,Abc
+118,AyushS,Greyhouse,ayushsarna0109@gmail.com,True,entertainment,10001-2000,,8368698843,8368698843,Delhi,www.geeyhouse.in,0,Ayush S,ayushsarna0109@gmail.com,8368698843,Owner
+120,ShashiBhushan,Shashi,shashi.bhushan@gmail.com,True,fashion,<10000,,8130709490,8130709490,Helloworld,abc,0,Shashi Bhushan,shashi.bhushan@gmail.com,8130709490,Tech
+121,RY,Game,Rsf@g.com,False,,,,5464666666,5464666666,,,0,,,,
+122,TesterTester,Test,Testing@gmail.com,True,,,,8382804150,8382804150,Oh,Ok,0,Ra Ya,Ra@ra.com,3666767676,Presi
+123,ManishPandey,US,manishpandey8858@gmail.com,True,food,10001-2000,,7398608221,7398608221,aaaaaaaaaa,aaaaa,0,manish pandey,manishpandey@gmail.com,8888888888,peon
+125,AbhishekRajput,Instagram,abhishekrajput113251@gmail.com,False,,,,6299364533,6299364533,,,0,,,,
+128,ManishPandey,Hodo,manish.1610086@kiet.edu,True,fashion,<10000,,7398608221,7398608221,Delhi,www.google.com,0,Manish Pandey,manishpandey8858@gmail.com,7398608221,CEO
+127,OsamaSulehria,Coca Cola,Osamasulehria57@gmail.com,False,,,,0305466416,0305466416,,,0,,,,
+135,ManishPandey,Hodo,manish@gmail.com,True,fashion,10001-2000,,7398608221,7398608221,Delhi,www.genz.com,0,Manish Pandey,manishpandey8858@gmail.com,7398608221,Ceo
+129,PrinceSharma,Sepl,prince.sharma@studentingera.com,True,food,<10000,,9634913204,9634913204,Okhla,www.studentingera.com,0,Prince Sharma,prince.sharma@studentingera.com,9634913204,Mr
+130,PSharma,Sepl,prince.sharma@gmail.com,True,food,10001-2000,,9634913204,9634913204,Okhla,www.st.com,0,Prince Sh,princesharma@gmail.com,9634913204,Emp
+131,PrinceSharma,Sepl,prince.sharma1@gmail.com,True,food,<10000,,9634913204,9634913204,Ff1 okhla,www.studentingera.com,0,Prince Sharma,princesharma@gmail.com,9634913204,Emp
+132,PrinceSh,Sepl,princesharma23@gmail.com,True,food,<10000,,9634913204,9634913204,FF-4 okhla phase -1,www.studentingera.com.,0,Prince Sh,princesharma65@gmail.com,9634913204,Emp
+133,PrinceSharma,Sepl,prince1703@gmail.com,True,food,<10000,,9634913204,9634913204,Okhla phase 1 ,www.studentingera.com,0,Prince Sharma,prince1704@gmail.com,9634913204,Emp
+134,PrinceSharma,Sepl,princesharma1703@gmail.com,True,education,<10000,,9634913204,9634913204,Okhla phase - 1,www.studentingera.com,0,Prince Sharma,prince1703@gmail.com,9634913204,Emp
+142,manishPandey,Hodo,Pandey@gmail.com,False,,,,7398608221,7398608221,,,0,,,,
+136,HarshalThakur,Harshal Thakur,harshalthakur412@gmail.com,True,,,,8888145606,8888145606,,,0,,,,
+137,ratinagrawal,Trishta,agrawal.ratin.agrawal@gmail.com,True,food,<10000,,7987622262,7987622262,"48, new market, t.t. nagar",www.trishta.in,0,ratin agrawal,agrawal.ratin.agrawal@gmail.com,7987622262,IT De
+140,PrinceSharma,Sepl,prince.sharma170@gmail.com,True,,,,9634913204,9634913204,Okhla phase 1,www.studentingera.com,0,Prince Sharma,princeshaa@gmail.com,9634913204,Emp
+139,TahseenHussain,Tahseen,Tmhussaincivil@gmail.com,False,,,,9102466656,9102466656,,,0,,,,
+141,ManishPandey,Hodo,m@example.com,True,entertainment,,,7398608221,7398608221,Delhi,www.genz360.com,0,Manish Pandey,manishpandey8858@gmail.com,7398608221,Ceo
+143,ManishPandey,Hodo,manishpande@gmail.com,False,,,,7398608221,7398608221,,,0,,,,
+158,MmMm,Hodo,mm@gmail.com,False,,,,7398608221,7398608221,,,0,,,,
+145,ManishPandey,Hodo,A@a.com,False,,,,7398608221,7398608221,,,0,,,,
+146,TestTest,Test,Test@gmail.com,False,,,,8383838383,8383838383,,,0,,,,
+147,PrinceSharma,Sepl,princesharma1@gmail.com,False,,,,,,,,0,,,,
+148,Prince Sharma,Sepl,ppsh@gmail.com,False,,,,,,,,0,,,,
+149,PrinceSharma,Sepl,prince1234@gmail.com,False,,,,,,,,0,,,,
+150,PSh,Sepl,prince1478@gmail.com,False,,,,,,,,0,,,,
+151,PrinceSharma,Sepl,123@gmail.com,False,,,,9634913204,9634913204,,,0,,,,
+152,PrinshSh,Sepl,prin@gmail.com,True,food,<10000,,9634913204,9634913204,Okhlaphase 1,www.sepl.com,0,Prince Sh,Prince@gmail.com,9634913204,Emp
+153,ManishPandey,Hodo,aa@example.com,False,,,,,,,,0,,,,
+161,DineshKokate,Dinesh,dineshkokate1003@gmail.com,True,,,,9158497289,9158497289,,,0,Dinesh Kokate,dineshkokate1003@gmail.com,9158497289,Job
+154,MaPa,H,S@s.com,False,,,,,,,,0,,,,
+155,ManishPandey,Hodo,d@gmail.com,False,,,,7398608221,7398608221,,,0,,,,
+159,ManishJalan,Manish,contactteameb@gmail.com,True,,,,7504680419,7504680419,,,0,,,,
+160,ManishJalan,TEB,contact@gmail.com,True,entertainment,50001-1000,,7504680419,7504680419,Delhi,Jdjd,0,Manish  Jalan,Contact@gmail.com,7504680419,Owner
+162,HameedKhan,Hameed,hameedkhan6403@gmail.com,True,,,,9177957087,9177957087,,,0,Hameed Khan,hameedkhan6403@gmail.com,9177957087,Stude
+163,TestMan,Test,testerman@gmail.com,True,fashion,20001-5000,,8382804150,8382804150,Tyhb,Funb,0,Tester Man,Tfhjj.thnv@gmail.com,8225222252,Teste
+164,MohsinKhan,Mohsin khan,mohsinkhan22t@gmail.com,True,,,,8077504900,8077504900,,,0,,,,
+165,VishalMhalasekar,BEAST,Vishalafrojack7@gmail.com,True,,,,7019387369,7019387369,,,0,,,,
+166,AnishKarki,no brand,Kcanish54@gmail.com,False,,,,9862039116,9862039116,,,0,,,,
+167,harshsethi,Levis,harshsethi222@gmail.com,True,,,,8949460336,8949460336,,,0,harsh sethi,harshsethi222@gmail.com,8949460336,Jacke
+169,AnilKumar,A,kumar.pharu205@gmail.com,False,,,,8853303039,8853303039,,,0,,,,
+170,PrinceSha,Mybrand,prince@prince.com,True,food,20001-5000,,9634913204,9634913204,Okh,www.company.com,0,Prince Sh,prince@prince.com,9634913204,An
+171,PrinceSharma,Prince,princesharm1703@gmail.com,True,entertainment,10001-2000,,9634913204,9634913204,Okh,www.com,0,Prince Shrm,prince.sharma@studentingera.co,9634913204,Emp
+206,SunetraChakravartty,Levis,sunetrashrawan@gmail.com,True,,,,7872126649,7872126649,,,0,Sunetra Shrawan,sunetrashrawan@gmail.com,7872126649,i wan
+184,SunetraChakravartty,Levis,sanjanachakravartty@gmail.com,False,,,,7872126649,7872126649,,,0,,,,
+207,RajR,Car,rajaramreddypagidireddy@gmail.com,False,,,,9701238471,9701238471,,,0,,,,
+208,Jayesh Malshikare ,Brand hub,Jayeshmalshikare1724@gmail.com,True,,,,9175857444,9175857444,,,0,,,,
+213,NeerajKumar,Neeraj,neerajkumar.india234@gmail.com,False,,,,+917979734,+917979734,,,0,,,,
+211,HarshRaj,Memer,Harsh7607@gmail.com,False,,,,9835393173,9835393173,,,0,,,,
+212,AbhishekSharma,Engineering,abhi2000aheksharma@gmail.com,True,,,,6377329599,6377329599,,,0,,,,
+215,ravibaghel,RB creater,ravindrabaghel666@gmail.com,True,,,,6359429524,6359429524,,,0,Ravindra Baghel,ravindrabaghel666@gmail.com,6359429524,Edito

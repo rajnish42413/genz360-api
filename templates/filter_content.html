@@ -1,0 +1,92 @@
+{%extends "campaign.html"%}
+{%block body%}
+{% for i in c %}
+    
+    <div class="accordion" id="accordionExample" style="margin:2%;">
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <div class="row">
+                <h3>{{i.name}}</h3>
+                <p style="margin-left:60%;">{{status[i.status]}}</p>
+            </div>
+            
+            <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">                 Expand
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">            <div class="card-body">
+<div class="row">
+    <div class="col-md-3">
+        <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown link
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+    </div> 
+    <div class="col-md-3">
+
+    
+    <input type="email" class="form-control" id="Email" aria-describedby="ProximaNova-Bold"
+          placeholder="pay out to type1 influencer" name="type1">
+        </div>
+        <div class="col-md-3">
+          <input type="email" class="form-control" id="Email" aria-describedby="ProximaNova-Bold"
+          placeholder="pay out to type1 influencer" name="type2">
+        </div>
+        <div class="col-md-3">
+
+        
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    {% endfor %}
+    <!-- <ul>
+    {% for i in c %}
+    
+      <li>
+        {{i.name}} ,{{i.status}}
+        <form style="margin-top:30px;" action="/admin-register" method="POST">
+    
+          <div class="form-group">
+    
+    
+    
+            <select class="form-control form-control-lg" name="status">
+              <option disabled>status</option>
+              <option value="0">Closed</option>
+              <option value="1">Active</option>
+              <option value="2">Upcoming</option>
+            </select>
+            <select class="form-control form-control-lg" name="type1">
+              <option disabled>Pay out to type 1 influencer</option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+       
+            </select>
+            <select class="form-control form-control-lg" name="type2">
+              <option disabled>Pay out to type 1 influencer</option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" id="create_account">SUBMIT</button><br>
+    
+        </form>
+       
+      </center>
+    
+      </li>
+      {% endfor %}
+    </ul> -->
+{%endblock%}

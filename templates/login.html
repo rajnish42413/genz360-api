@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Login</title>
+
+ <link rel="stylesheet" href="../static/css/font.css"/admin->
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <style>
+@font-face  {
+  font-family:'ProximaNova-Bold';
+  src: url("../static/fonts/ProximaNova-Bold.ttf") format('truetype');
+
+}
+@font-face {
+  font-family: 'SF-Regular';
+src: url("../static/fonts/SF-Regular.ttf") format('truetype');
+}
+
+
+/* b
+{
+  font-family: 'ProximaNova-Bold' !important;
+}
+input
+{
+  font-family: 'SF-Regular' !important;
+}
+h4
+{
+  font-family: 'SF-Regular' !important;
+color:grey;
+} */
+#logo
+{
+    margin-top:4%;
+}
+.form-group
+{
+  width:10%;
+  min-width:280px;
+  height:30%;
+  padding-top:20px;
+   margin-bottom: 20px;
+
+}
+img
+{
+  width: 100px;
+  height: 60px;
+}
+#create_account
+{
+  width:32%;
+  background-color:#E15249;
+  border-style:none;
+  margin-top: 15px;
+}
+input
+{
+  padding-top:15px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+margin-bottom:10px;
+font-family: 'ProximaNova-Bold' ;
+border:1px solid #B8B7B7 ;
+
+}
+select
+{
+  margin-top:10px;
+}
+
+*{
+    font-family: 'SF-Regular';
+}
+
+@media only screen and (max-width: 600px) {
+.header
+{
+  margin-left: 10%;
+}
+
+.border{
+  min-width:340px;
+}
+}
+.img{
+  margin-top: 20px;
+}
+.header{
+  border:2px solid blue;
+  height: 200px;
+  width: 200px;
+}
+.border{
+  border: 3px solid #f1f1f1;
+  margin-top: 100px;
+  border-radius: 30px;
+  width: 40%;
+}
+  .back_btn:hover{
+      cursor: pointer;
+      transform:scale(0.9);
+      transition:0.3s;
+    }
+    </style>
+ </head>
+  <body>
+<center>
+  <div class="border">
+     <div class=><img src="../static/logo.png" style="width:30%;height: 30%;"></div>
+     <form style="margin-top:30px;" action="/admin-login" method="POST">
+        <div><b style="font-size: 30px;padding-bottom:10px;">Admin Login</b></div>
+                <div class="form-group">
+                <input type="text" class="form-control" aria-describedby="ProximaNova-Bold" placeholder="Enter Username" name="username">
+
+                <input type="password" class="form-control"    placeholder="Enter Password" name="password">
+                <button type="submit" class="btn btn-primary" id="create_account">Login</button><br>
+              </form>
+            </div>
+            </center>
+
+
+</body>
+</html>
