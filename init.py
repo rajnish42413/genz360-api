@@ -33,7 +33,7 @@ from functools import wraps
 
 app=Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://genz360_user:+GP2k5FkT(&x@localhost/genz360_db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:rajnish123@localhost/genz360_db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 db.app=app
