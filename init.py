@@ -1,6 +1,7 @@
 from flask import Flask,render_template,redirect,url_for,request,jsonify,send_file,session,flash
 from flask import send_file
 from models import *
+from flask import json
 import uuid
 import random
 import string
@@ -28,7 +29,7 @@ from requests.exceptions import ConnectionError
 from requests.exceptions import HTTPError
 from threading import Thread
 from functools import wraps
-
+from flask_sqlalchemy import SQLAlchemy
 
 
 app=Flask(__name__)
@@ -38,10 +39,30 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 db.app=app
 
-migrate = Migrate(app, db)
-
-
 ma=Marshmallow(app)
+
+@app.route('/')
+def testdb():
+    return '<h1>It works.</h1>'
+  
+
+@app.route('/messages', methods = ['POST'])
+def api_message():
+
+    if request.headers['Content-Type'] == 'text/plain':
+        return "Text Message: " + request.data
+
+    elif request.headers['Content-Type'] == 'application/json':
+        return "JSON Message: " + json.dumps(request.json)
+
+    elif request.headers['Content-Type'] == 'application/octet-stream':
+        f = open('./binary', 'wb')
+        f.write(request.data)
+        f.close()
+        return "Binary message written!"
+
+    else:
+        return "415 Unsupported Media Type ;)"
 
 class Brand_details_S(ma.ModelSchema):
 	class Meta:
@@ -224,11 +245,9 @@ def send_push_message(token, message, extra=None):
 @app.route("/register/push-token",methods=["GET","POST"])
 def register_push_token():
 	data=request.json
-	tokken=data["tokken"]
+	return data["tokken"]
 	push_tokken=data["push_tokken"]
 	inf=Influencer_details.query.filter_by(c_tokken=tokken).first()
-	if inf.not_token==None:
-		send_push_message(push_tokken,"Welcome "+str(inf.name.split(" ")[0])+"! You have been successfully registered with GenZ360. Your id card can be downloaded from your profile on to your device.")
 	inf.not_token=push_tokken
 	db.session.commit()
 	return jsonify(valid=True)
@@ -236,7 +255,7 @@ def register_push_token():
 @app.route("/register/push-token-brand",methods=["GET","POST"])
 def register_push_token_brand():
 	data=request.json
-	tokken=data["tokken"]
+	data["tokken"]
 	push_tokken=data["push_tokken"]
 	inf=Brand_details.query.filter_by(c_tokken=tokken).first()
 	if inf.not_token==None:
