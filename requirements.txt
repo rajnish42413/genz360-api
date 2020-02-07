@@ -9,7 +9,7 @@ cloud-init==19.4
 colorama==0.3.7
 configobj==5.0.6
 constantly==15.1.0
-cryptography==2.1.4
+cryptography==2.3
 distro-info===0.18ubuntu0.18.04.1
 ec2-hibinit-agent==1.0.0
 exponent-server-sdk==0.3.1
