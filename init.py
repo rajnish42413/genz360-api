@@ -745,7 +745,7 @@ def inf_daily_task_details():
 
 @app.route("/inf-daily-task",methods=["GET","POST"])
 def inf_daily_task():
-       try:
+	try:
 		if request.method=="POST":
 			data=request.json
 			tokken=data["tokken"]
