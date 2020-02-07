@@ -1724,7 +1724,7 @@ def submit_creative():
 
 @app.route("/infnotifications",methods=["GET","POST"])
 def infnotifications():
-	try:
+	# try:
 		data=request.json
 		trans=[]
 		inf=Influencer_details.query.filter_by(c_tokken=data["tokken"]).first()
@@ -1732,8 +1732,8 @@ def infnotifications():
 		for i in inf.notify[::-1]:
 			trans.append(n_sch.dump(i.for_influencer).data)
 		return jsonify(valid=True,notif=trans)
-	except:
-		return jsonify(valid=False,err="Something Went Wrong!!!")
+	# except:
+	# 	return jsonify(valid=False,err="Something Went Wrong!!!")
 
 
 @app.route("/submitinfdetails",methods=["GET","POST"])
