@@ -35,9 +35,11 @@ import os
 
 app=Flask(__name__)
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/genz360'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:rajnish123@localhost/genz360_db'
+#db = SQLAlchemy(app)
 
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:rajnish123@localhost/genz360_db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 db.init_app(app)
 db.app=app
 
