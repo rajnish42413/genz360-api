@@ -2,9 +2,7 @@ argparse==1.2.1
 Click==7.0
 dnspython==1.12.0
 Flask==1.1.1
-freeipa==2.0.0a0
-iniparse==0.3.1
-iotop==0.3.2
+iniparse==0.3.2
 ipapython==3.0.0
 itsdangerous==1.1.0
 iwlib==1.0
