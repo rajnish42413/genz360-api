@@ -888,7 +888,7 @@ def submitspoc():
 	if request.method=="POST":	
 			data = request.json
 			tokken=data["tokken"]
-			brand=Brand_details.query.filter_by(c_tokken=tokken).first()
+			# brand=Brand_details.query.filter_by(c_tokken=tokken).first()
 			# spoc=Spoc_details(name=data["full_name"],email=data["email"],contact_no=data["number"],designation=data["desig"])
 			# db.session.add(spoc)
 			# brand.spoc.append(spoc)
