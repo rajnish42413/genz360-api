@@ -887,12 +887,13 @@ def inflivecampaign():
 def submitspoc():	
 	if request.method=="POST":	
 			data = request.json
-			# brand=Brand_details.query.filter_by(c_tokken=data["tokken"]).first()
+			tokken=data["tokken"]
+			brand=Brand_details.query.filter_by(c_tokken=tokken).first()
 			# spoc=Spoc_details(name=data["full_name"],email=data["email"],contact_no=data["number"],designation=data["desig"])
 			# db.session.add(spoc)
 			# brand.spoc.append(spoc)
 			# db.session.commit()
-			return jsonify(valid=True,msg="SPOC Updated",data=data)
+			return jsonify(valid=True,msg="SPOC Updated",data=brand)
 # def submitspoc():
 # 	try:
 		
