@@ -30,7 +30,7 @@ from requests.exceptions import HTTPError
 from threading import Thread
 from functools import wraps
 from flask_sqlalchemy import SQLAlchemy
-
+import os
 
 
 app=Flask(__name__)
@@ -765,7 +765,7 @@ def inf_daily_task():
 
 @app.route("/inf-live-campaign",methods=["GET","POST"])
 def inf_live_campaign():
-	try:
+	# try:
 		if request.method=="POST":
 			data=request.json
 			tokken=data["tokken"]
@@ -780,8 +780,8 @@ def inf_live_campaign():
 					if cc.status==1:
 						result.append(campaign_schema.dump(i.registered_campaigns).data)
 			return jsonify(valid=True,livecampaign=result)
-	except:
-		return jsonify(valid=False,err="Some Thing Went Wrong!!!")
+	# except:
+	# 	return jsonify(valid=False,err="Some Thing Went Wrong!!!")
 
 @app.route("/inf-activity",methods=["GET","POST"])
 def inf_activity():
@@ -1734,7 +1734,7 @@ def infnotifications():
 		inf=Influencer_details.query.filter_by(c_tokken=data["tokken"]).first()
 		n_sch=Notifications_S()
 		for i in inf.notify[::-1]:
-			trans.append(n_sch.dump(i.for_influencer))
+			trans.append(n_sch.dump(i.for_influencer).data)
 		return jsonify(valid=True,notif=trans)
 	# except:
 	# 	return jsonify(valid=False,err="Something Went Wrong!!!")
