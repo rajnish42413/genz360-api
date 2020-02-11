@@ -884,8 +884,8 @@ def inflivecampaign():
 
 
 @app.route("/submitspoc",methods=["GET","POST"])
-def submitspoc():
-	try:
+# def submitspoc():
+# 	try:
 		if request.method=="POST":
 			data = request.json
 			brand=Brand_details.query.filter_by(c_tokken=data["tokken"]).first()
@@ -894,10 +894,10 @@ def submitspoc():
 			brand.spoc.append(spoc)
 			db.session.commit()
 			return jsonify(valid=True,msg="SPOC Updated")
-		else:
-			return jsonify(valid=False,err="Method Not Allowed!!!")
-	except:
-		return jsonify(valid=False,err="Some Thing Went Wrong!!!")
+	# 	else:
+	# 		return jsonify(valid=False,err="Method Not Allowed!!!")
+	# except:
+	# 	return jsonify(valid=False,err="Some Thing Went Wrong!!!")
 
 
 @app.route("/submitinf-platform",methods=["GET","POST"])
