@@ -893,7 +893,7 @@ def submitspoc():
 			# db.session.add(spoc)
 			# brand.spoc.append(spoc)
 			# db.session.commit()
-			return jsonify(valid=True,msg="SPOC Updated",data=brand)
+			return jsonify(valid=True,msg="SPOC Updated",data=data)
 # def submitspoc():
 # 	try:
 		
