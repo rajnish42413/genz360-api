@@ -40,6 +40,7 @@ app=Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:rajnish123@localhost/genz360_db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
+app.debug = True
 db.init_app(app)
 db.app=app
 
@@ -1826,7 +1827,7 @@ def req_payment(tokken,amount):
 
 @app.route("/inf-payment-final",methods=["GET","POST"])
 def inf_req_payment():
-	try:
+	#try:
 		data=request.json
 		msg="Created"
 		tokken=data["tokken"]
@@ -1858,8 +1859,8 @@ def inf_req_payment():
 		inf.payment.append(payment)
 		db.session.commit()
 		return jsonify(valid=True,msg=msg)
-	except:
-		return jsonify(valid=False,err="Something Went Wrong!!!")
+	#except:
+	#	return jsonify(valid=False,err="Something Went Wrong!!!")
 
 @app.route("/bestinfluencers",methods=["GET","POST"])
 def bestinfluencers():
