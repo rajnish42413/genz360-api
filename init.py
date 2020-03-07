@@ -1392,8 +1392,8 @@ def infurl(m,cid):
 
 
 @app.route("/apply-for-campaign",methods=["GET","POST"])
-#def apply_for_campaign():
-#	try:
+# def apply_for_campaign():
+# 	try:
 		if request.method=="POST":
 			data=request.json
 			inf=Influencer_details.query.filter_by(c_tokken=data["tokken"]).first()
@@ -1503,8 +1503,8 @@ def infurl(m,cid):
 			else:
 				send_push_notif(inf,"Regret! Number of applications have reached the limit.")
 				return jsonify(valid=False,err="Sorry!!! Campaign Full Please Try In Some Other Campaign")
-	#except:
-		#return jsonify(valid=False,err="Something Went Wrong!!!")
+	# except:
+	# 	return jsonify(valid=False,err="Something Went Wrong!!!")
 
 @app.route("/check-applied",methods=["GET","POST"])
 def check_applied():
