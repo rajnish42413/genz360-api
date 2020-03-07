@@ -40,6 +40,7 @@ app=Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:rajnish123@localhost/genz360_db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
+app.debug = True
 db.init_app(app)
 db.app=app
 
@@ -883,20 +884,23 @@ def inflivecampaign():
 
 
 @app.route("/submitspoc",methods=["GET","POST"])
-def submitspoc():
-	try:
-		if request.method=="POST":
+def submitspoc():	
+	if request.method=="POST":	
 			data = request.json
-			brand=Brand_details.query.filter_by(c_tokken=data["tokken"]).first()
+			tokken=data["tokken"]
+			brand=Brand_details.query.filter_by(c_tokken=tokken).first()
 			spoc=Spoc_details(name=data["full_name"],email=data["email"],contact_no=data["number"],designation=data["desig"])
 			db.session.add(spoc)
 			brand.spoc.append(spoc)
 			db.session.commit()
-			return jsonify(valid=True,msg="SPOC Updated")
-		else:
-			return jsonify(valid=False,err="Method Not Allowed!!!")
-	except:
-		return jsonify(valid=False,err="Some Thing Went Wrong!!!")
+			return jsonify(valid=True,msg="SPOC Updated",data=data)
+# def submitspoc():
+# 	try:
+		
+	# 	else:
+	# 		return jsonify(valid=False,err="Method Not Allowed!!!")
+	# except:
+	# 	return jsonify(valid=False,err="Some Thing Went Wrong!!!")
 
 
 @app.route("/submitinf-platform",methods=["GET","POST"])
@@ -1388,8 +1392,8 @@ def infurl(m,cid):
 
 
 @app.route("/apply-for-campaign",methods=["GET","POST"])
-def apply_for_campaign():
-	try:
+#def apply_for_campaign():
+#	try:
 		if request.method=="POST":
 			data=request.json
 			inf=Influencer_details.query.filter_by(c_tokken=data["tokken"]).first()
@@ -1499,8 +1503,8 @@ def apply_for_campaign():
 			else:
 				send_push_notif(inf,"Regret! Number of applications have reached the limit.")
 				return jsonify(valid=False,err="Sorry!!! Campaign Full Please Try In Some Other Campaign")
-	except:
-		return jsonify(valid=False,err="Something Went Wrong!!!")
+	#except:
+		#return jsonify(valid=False,err="Something Went Wrong!!!")
 
 @app.route("/check-applied",methods=["GET","POST"])
 def check_applied():
@@ -1825,7 +1829,7 @@ def req_payment(tokken,amount):
 
 @app.route("/inf-payment-final",methods=["GET","POST"])
 def inf_req_payment():
-	try:
+	#try:
 		data=request.json
 		msg="Created"
 		tokken=data["tokken"]
@@ -1857,8 +1861,8 @@ def inf_req_payment():
 		inf.payment.append(payment)
 		db.session.commit()
 		return jsonify(valid=True,msg=msg)
-	except:
-		return jsonify(valid=False,err="Something Went Wrong!!!")
+	#except:
+	#	return jsonify(valid=False,err="Something Went Wrong!!!")
 
 @app.route("/bestinfluencers",methods=["GET","POST"])
 def bestinfluencers():
